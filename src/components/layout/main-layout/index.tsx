@@ -12,6 +12,7 @@ import {
   ViewProps,
 } from 'react-native';
 import StatusBarLayout from '../status-bar';
+import { MenuIcon } from '@assets';
 
 interface IProps extends ViewProps {
   title?: string;
@@ -110,6 +111,20 @@ const BackToPreviousButton = () => {
   );
 };
 
+const OpenDrawerButton = () => {
+  const navigation = useNavigation<any>();
+  return (
+    <TouchableOpacity
+      onPress={() => {
+        navigation.openDrawer();
+      }}
+      style={{ width: 36 }}
+    >
+      <MenuIcon width={20} height={20} viewBox="0 0 512 512" />
+    </TouchableOpacity>
+  );
+};
+
 const BackToHomeButton = () => {
   const navigation = useNavigation();
   return (
@@ -125,5 +140,6 @@ const BackToHomeButton = () => {
 
 MainLayout.BackToHomeButton = BackToHomeButton;
 MainLayout.BackToPreviousButton = BackToPreviousButton;
+MainLayout.OpenDrawerButton = OpenDrawerButton;
 
 export default MainLayout;

@@ -1,9 +1,9 @@
 import { Button, Text } from '@components';
+import AuthLayout from '@components/layout/auth-layout';
 import { setToken } from '@redux/reducers/auth.slice';
 import { useAppDispatch } from '@redux/selectors';
 import { baseAPI } from '@services/baseAPI';
 import React from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Login = () => {
   const dispatch = useAppDispatch();
@@ -19,10 +19,10 @@ const Login = () => {
     }
   };
   return (
-    <SafeAreaView>
+    <AuthLayout>
       <Text>Chat</Text>
       <Button title="Login" onPress={signIn} />
-    </SafeAreaView>
+    </AuthLayout>
   );
 };
 

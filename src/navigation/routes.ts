@@ -12,8 +12,8 @@ enum MainRoutes {
 }
 
 enum TabRoutes {
-  HOME = 'home',
-  CHAT = 'chat',
+  HOME = 'HOME',
+  CHAT = 'CHAT',
 }
 
 export { RootRoutes, AuthRoutes, MainRoutes, TabRoutes };

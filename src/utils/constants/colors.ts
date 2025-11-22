@@ -1,11 +1,11 @@
 const colors = {
   primary: {
-    default: '#0F4FBD',
-    darker: '#0D44A2',
-    c100: '#E7EDF8',
-    c200: '#B7CAEB',
-    c300: '#7FA1DC',
-    c500: '#4B7ACC',
+    default: '#00AFB9',
+    darker: '#0097A0',
+    c100: '#E0F7F8',
+    c200: '#AFE9EC',
+    c300: '#73D4D9',
+    c500: '#24C0C8',
   },
   white: '#FFFFFF',
   black: '#000000',

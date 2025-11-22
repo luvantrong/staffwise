@@ -1,4 +1,4 @@
-import { Message } from '@components';
+import { BottomSheetProvider, Message, ModalProvider } from '@components';
 import Text from '@components/core/text';
 import View from '@components/core/view';
 import configDayJS from '@config/day';
@@ -11,6 +11,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Toast from 'react-native-toast-message';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import BottomSheetProvider2 from '@components/common/bottom-sheet-outside';
 
 configDayJS();
 
@@ -63,19 +65,19 @@ const AppContent = () => {
     >
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          {/* <GestureHandlerRootView style={{ flex: 1 }}> */}
-          {/* <BottomSheetProvider>
+          <GestureHandlerRootView style={{ flex: 1 }}>
+            <BottomSheetProvider>
               <BottomSheetProvider2>
-                <ModalProvider> */}
-          {/* <RootNavigator /> */}
-          <View>
-            <Text>Staff Wise</Text>
-          </View>
-          <Toast config={toastConfig} />
-          {/* </ModalProvider>
+                <ModalProvider>
+                  {/* <RootNavigator /> */}
+                  <View>
+                    <Text>Staff Wise</Text>
+                  </View>
+                  <Toast config={toastConfig} />
+                </ModalProvider>
               </BottomSheetProvider2>
-            </BottomSheetProvider> */}
-          {/* </GestureHandlerRootView> */}
+            </BottomSheetProvider>
+          </GestureHandlerRootView>
         </PersistGate>
       </Provider>
     </ErrorBoundary>

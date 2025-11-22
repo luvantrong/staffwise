@@ -40,5 +40,6 @@ module.exports = {
     ['@babel/plugin-transform-flow-strip-types', { loose: true }],
     ['@babel/plugin-proposal-class-properties', { loose: true }],
     ['@babel/plugin-transform-private-methods', { loose: true }],
+    'react-native-worklets/plugin',
   ],
 };

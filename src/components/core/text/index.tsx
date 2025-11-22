@@ -1,4 +1,10 @@
-import { StyleSheet, Text as RNText, TextProps, StyleProp, TextStyle } from 'react-native';
+import {
+  StyleSheet,
+  Text as RNText,
+  TextProps,
+  StyleProp,
+  TextStyle,
+} from 'react-native';
 import React from 'react';
 import colors from '../../../utils/constants/colors';
 
@@ -6,7 +12,7 @@ interface IProps extends TextProps {
   font?: 'Inter' | 'Poppins';
   color?: string;
   size?: number;
-  weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+  weight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 'bold';
   align?: 'auto' | 'left' | 'right' | 'center' | 'justify';
   transform?: 'none' | 'capitalize' | 'uppercase' | 'lowercase';
   decoration?: 'none' | 'underline' | 'line-through' | 'underline line-through';

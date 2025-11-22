@@ -1,3 +1,4 @@
+import { MenuIcon } from '@assets';
 import ArrowLeft from '@assets/icons/ArrowLeft';
 import Text from '@components/core/text';
 import View from '@components/core/view';
@@ -7,12 +8,13 @@ import colors from '@utils/constants/colors';
 import React, { Fragment } from 'react';
 import {
   ActivityIndicator,
+  Image,
   Keyboard,
+  StyleSheet,
   TouchableOpacity,
   ViewProps,
 } from 'react-native';
 import StatusBarLayout from '../status-bar';
-import { MenuIcon } from '@assets';
 
 interface IProps extends ViewProps {
   title?: string;
@@ -20,6 +22,7 @@ interface IProps extends ViewProps {
   next?: React.ReactNode;
   backgroundColor?: string;
   loading?: boolean;
+  headerChildren?: React.ReactNode;
 }
 
 const MainLayout = ({
@@ -29,6 +32,7 @@ const MainLayout = ({
   next,
   backgroundColor,
   loading = false,
+  headerChildren,
   ...props
 }: IProps) => {
   return (
@@ -55,33 +59,52 @@ const MainLayout = ({
         statusBarColor={backgroundColor || colors.primary.default}
       >
         <View
-          row
-          space_between
-          center
-          paddingHorizontal={16}
-          paddingVertical={8}
+          backgroundColor={
+            headerChildren ? colors.primary.default : colors.background
+          }
           style={{
-            flex: 0,
-            backgroundColor: backgroundColor || colors.primary.default,
+            borderBottomStartRadius: headerChildren ? 48 : 0,
+            borderBottomEndRadius: headerChildren ? 48 : 0,
           }}
-          onStartShouldSetResponder={() => {
-            Keyboard.dismiss();
-            return false;
-          }}
-          {...props}
         >
-          <View width={24}>{back}</View>
-          <Text
-            font="Inter"
-            size={18}
-            color={colors.white}
-            weight={600}
-            align="center"
-            numberOfLines={2}
+          {headerChildren && (
+            <View style={styles.circleBackground}>
+              <Image source={require('@assets/images/circle-background.png')} />
+            </View>
+          )}
+          <View
+            row
+            space_between
+            center
+            paddingHorizontal={16}
+            paddingVertical={8}
+            style={{
+              flex: 0,
+              backgroundColor:
+                backgroundColor || headerChildren
+                  ? colors.transparent
+                  : colors.primary.default,
+            }}
+            onStartShouldSetResponder={() => {
+              Keyboard.dismiss();
+              return false;
+            }}
+            {...props}
           >
-            {title}
-          </Text>
-          <View width={24}>{next}</View>
+            <View width={24}>{back}</View>
+            <Text
+              font="Inter"
+              size={18}
+              color={colors.white}
+              weight={'bold'}
+              align="center"
+              numberOfLines={2}
+            >
+              {title}
+            </Text>
+            <View width={24}>{next}</View>
+          </View>
+          {headerChildren}
         </View>
         <View
           flex={1}
@@ -143,3 +166,11 @@ MainLayout.BackToPreviousButton = BackToPreviousButton;
 MainLayout.OpenDrawerButton = OpenDrawerButton;
 
 export default MainLayout;
+
+const styles = StyleSheet.create({
+  circleBackground: {
+    position: 'absolute',
+    bottom: '-65%',
+    left: 0,
+  },
+});

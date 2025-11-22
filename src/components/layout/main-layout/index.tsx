@@ -170,7 +170,7 @@ export default MainLayout;
 const styles = StyleSheet.create({
   circleBackground: {
     position: 'absolute',
-    bottom: '-65%',
+    bottom: '-75%',
     left: 0,
   },
 });

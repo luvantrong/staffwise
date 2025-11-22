@@ -1,12 +1,12 @@
+import MainLayout from '@components/layout/main-layout';
 import React from 'react';
 import { Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Home = () => {
   return (
-    <SafeAreaView>
+    <MainLayout back={<MainLayout.OpenDrawerButton />} title="Home">
       <Text>Home</Text>
-    </SafeAreaView>
+    </MainLayout>
   );
 };
 

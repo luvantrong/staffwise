@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { BottomSheetProvider, Message, ModalProvider } from '@components';
 import Text from '@components/core/text';
 import View from '@components/core/view';
@@ -14,6 +15,8 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import BottomSheetProvider2 from '@components/common/bottom-sheet-outside';
 import RootNavigator from '@navigation';
+import BootSplash from 'react-native-bootsplash';
+import { useEffect } from 'react';
 
 configDayJS();
 
@@ -52,6 +55,10 @@ const AppContent = () => {
   if (error) {
     return <FallbackComponent error={error} />;
   }
+
+  useEffect(() => {
+    BootSplash.hide({ fade: true });
+  }, []);
 
   return (
     <ErrorBoundary

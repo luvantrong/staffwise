@@ -13,6 +13,7 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import BottomSheetProvider2 from '@components/common/bottom-sheet-outside';
+import RootNavigator from '@navigation';
 
 configDayJS();
 
@@ -69,10 +70,7 @@ const AppContent = () => {
             <BottomSheetProvider>
               <BottomSheetProvider2>
                 <ModalProvider>
-                  {/* <RootNavigator /> */}
-                  <View>
-                    <Text>Staff Wise</Text>
-                  </View>
+                  <RootNavigator />
                   <Toast config={toastConfig} />
                 </ModalProvider>
               </BottomSheetProvider2>

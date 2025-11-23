@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "changeNameApp:staffwise": "node scripts/changeNameApp.js staff-wise"
+    "changeNameApp:staffwise": "node scripts/changeNameApp.js staff-wise",
+    "changeLogoApp:staffwise": "node scripts/changeLogoApp.js staff-wise"
   },
   "dependencies": {
     "@gorhom/bottom-sheet": "^5.2.6",

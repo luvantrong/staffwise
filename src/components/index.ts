@@ -6,6 +6,7 @@ import BottomSheet from './common/bottom-sheet';
 import BottomSheetProvider from './common/bottom-sheet';
 import { useModal } from './common/modal';
 import ModalProvider from './common/modal';
+import TextInput, { PasswordInput } from './common/input';
 
 export {
   Text,
@@ -16,4 +17,6 @@ export {
   BottomSheetProvider,
   useModal,
   ModalProvider,
+  TextInput,
+  PasswordInput,
 };

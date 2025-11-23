@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { authSlice } from '@redux/reducers/auth.slice';
 import events, { eventKeys } from '@utils/helpers/events';
 import React, { useEffect } from 'react';
-import MainNavigator from './main';
+import MainNavigator from './main/drawer-navigator';
 import { RootRoutes } from './routes';
 import { useAppDispatch } from '@redux/selectors';
 import useAuthen from '@hooks/useAuthen';

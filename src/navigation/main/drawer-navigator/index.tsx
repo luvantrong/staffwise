@@ -30,10 +30,10 @@ const TabNavigator = () => {
         drawerPosition: 'left',
         swipeEdgeWidth: 50,
       }}
-      initialRouteName={TabRoutes.MESSAGE}
+      initialRouteName={TabRoutes.CHAT}
     >
       <Drawer.Screen
-        name={TabRoutes.MESSAGE}
+        name={TabRoutes.CHAT}
         component={Chat}
         options={{
           headerShown: false,

@@ -15,12 +15,14 @@ enum MainRoutes {
 }
 
 enum TabRoutes {
-  MESSAGE = 'Message',
+  CHAT = 'Chat',
   HOME = 'Home',
 }
 
 enum StaffRoutes {
+  HOME = 'home',
   LEAVE_STATUS = 'leave_status',
+  ADDITIONAL_LEAVE = 'additional_leave',
 }
 
 export { RootRoutes, AuthRoutes, MainRoutes, TabRoutes, StaffRoutes };

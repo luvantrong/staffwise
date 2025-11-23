@@ -3,12 +3,18 @@ import MainLayout from '@components/layout/main-layout';
 import ProfileInfo from '@components/ui/proflie-info';
 import { MainRoutes } from '@navigation/routes';
 import { useNavigation } from '@react-navigation/native';
+import { ProfileResponse, Role } from '@utils/types/profile.type';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { ContentDetailPageProps } from '../..';
 
-const ManagerHome = (props: ContentDetailPageProps) => {
-  const { profile } = props;
+const profileDefault: ProfileResponse = {
+  id: 1,
+  name: 'Mỹ Linh',
+  position: Role.STAFF,
+  avatar: '',
+};
+
+const ManagerHome = () => {
   const navigation = useNavigation<any>();
   const onLeaveStatus = () => {
     navigation.getParent().navigate(MainRoutes.MANAGER);
@@ -17,7 +23,7 @@ const ManagerHome = (props: ContentDetailPageProps) => {
     <MainLayout
       back={<MainLayout.OpenDrawerButton />}
       title="Home"
-      headerChildren={<ProfileInfo profile={profile} />}
+      headerChildren={<ProfileInfo profile={profileDefault} />}
     >
       <View style={styles.container}>
         <Text>ManagerHome</Text>

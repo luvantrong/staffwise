@@ -5,10 +5,16 @@ import { MainRoutes } from '@navigation/routes';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { ContentDetailPageProps } from '../..';
+import { ProfileResponse, Role } from '@utils/types/profile.type';
 
-const AdminHome = (props: ContentDetailPageProps) => {
-  const { profile } = props;
+const profileDefault: ProfileResponse = {
+  id: 1,
+  name: 'Mỹ Linh',
+  position: Role.STAFF,
+  avatar: '',
+};
+
+const AdminHome = () => {
   const navigation = useNavigation<any>();
   const onLeaveStatus = () => {
     navigation.getParent().navigate(MainRoutes.ADMIN);
@@ -17,7 +23,7 @@ const AdminHome = (props: ContentDetailPageProps) => {
     <MainLayout
       back={<MainLayout.OpenDrawerButton />}
       title="Home"
-      headerChildren={<ProfileInfo profile={profile} />}
+      headerChildren={<ProfileInfo profile={profileDefault} />}
     >
       <View style={styles.container}>
         <Text>AdminHome</Text>

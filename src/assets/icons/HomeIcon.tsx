@@ -1,14 +1,11 @@
 import * as React from 'react';
 import Svg, { SvgProps, Path } from 'react-native-svg';
 const HomeIcon = (props: SvgProps) => (
-  <Svg
-    width={20}
-    height={20}
-    fill={props?.fill || '#555a61'}
-    viewBox="0 0 256 256"
-    {...props}
-  >
-    <Path d="M240 208h-16v-72l2.34 2.34A8 8 0 0 0 237.66 127l-98.35-98.32a16 16 0 0 0-22.62 0L18.34 127a8 8 0 0 0 11.32 11.31L32 136v72H16a8 8 0 0 0 0 16h224a8 8 0 0 0 0-16ZM48 120l80-80 80 80v88h-48v-56a8 8 0 0 0-8-8h-48a8 8 0 0 0-8 8v56H48Zm96 88h-32v-48h32Z" />
+  <Svg width={26} height={24} fill="none" {...props}>
+    <Path
+      fill={props?.fill || '#555a61'}
+      d="m13 5.69 5.417 4.5V18H16.25v-6h-6.5v6H7.583v-7.81L13 5.69ZM13 3 2.167 12h3.25v8h6.5v-6h2.166v6h6.5v-8h3.25"
+    />
   </Svg>
 );
 export default HomeIcon;

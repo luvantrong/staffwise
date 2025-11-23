@@ -5,7 +5,7 @@ import ArrowLeft from '@assets/icons/ArrowLeft';
 import AddIcon from '@assets/icons/AddIcon';
 import MenuIcon from '@assets/icons/MenuIcon';
 import HomeIcon from '@assets/icons/HomeIcon';
-import ChatIcon from '@assets/icons/ChatIcon';
+import LogoIcon from '@assets/icons/LogoIcon';
 import SignOutIcon from '@assets/icons/SignOutIcon';
 import SadFace from '@assets/icons/SadFace';
 
@@ -17,7 +17,7 @@ export {
   AddIcon,
   MenuIcon,
   HomeIcon,
-  ChatIcon,
+  LogoIcon,
   SignOutIcon,
   SadFace,
 };

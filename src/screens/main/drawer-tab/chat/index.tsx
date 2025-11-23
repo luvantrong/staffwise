@@ -1,15 +1,10 @@
 import { AddIcon } from '@assets';
 import { Button } from '@components';
 import MainLayout from '@components/layout/main-layout';
-import { authSlice } from '@redux/reducers/auth.slice';
-import { useAppDispatch } from '@redux/selectors';
-import axios from 'axios';
 import React from 'react';
 import { Text } from 'react-native';
 
 const Chat = () => {
-  const dispatch = useAppDispatch();
-
   return (
     <MainLayout
       title="Staff Wise"
@@ -21,13 +16,6 @@ const Chat = () => {
       }
     >
       <Text>Chat</Text>
-      <Button
-        title="Logout"
-        onPress={() => {
-          axios.defaults.headers.common.Authorization = '';
-          dispatch(authSlice.actions.removeToken());
-        }}
-      />
     </MainLayout>
   );
 };

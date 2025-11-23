@@ -1,12 +1,13 @@
 /* eslint-disable react/no-unstable-nested-components */
+import { HomeIcon, LogoIcon } from '@assets';
+import { View } from '@components';
 import { TabRoutes } from '@navigation/routes';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import Chat from '@screens/main/drawer-tab/chat';
 import Home from '@screens/main/drawer-tab/home';
+import colors from '@utils/constants/colors';
 import * as React from 'react';
 import CustomDrawer from './CustomDrawer';
-import { ChatIcon, HomeIcon } from '@assets';
-import colors from '@utils/constants/colors';
 
 const Drawer = createDrawerNavigator<any>();
 
@@ -36,8 +37,15 @@ const TabNavigation = () => {
         component={Chat}
         options={{
           headerShown: false,
-          drawerIcon: ({ color }) => (
-            <ChatIcon width={22} height={22} fill={color} />
+          drawerIcon: ({ color, focused }) => (
+            <View
+              backgroundColor={colors.primary.default}
+              borderRadius={22}
+              borderWidth={focused ? 0 : 1}
+              borderColor={colors.primary.default}
+            >
+              <LogoIcon width={22} height={22} fill={color} />
+            </View>
           ),
         }}
       />

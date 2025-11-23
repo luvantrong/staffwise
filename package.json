@@ -8,6 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
+    "apk": "cd android && ./gradlew clean && ./gradlew assembleRelease && cd ..",
     "changeNameApp:staffwise": "node scripts/changeNameApp.js staff-wise",
     "changeLogoApp:staffwise": "node scripts/changeLogoApp.js staff-wise"
   },

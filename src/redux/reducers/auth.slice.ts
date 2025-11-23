@@ -5,12 +5,6 @@ export interface AuthState {
   isSignedIn: boolean;
   access_token: string | null;
   refresh_token: string | null;
-  isFirstTime?: boolean;
-  profileId?: number;
-  referralCode?: string;
-  isReferral?: boolean;
-  idp?: string;
-  isFirstNavigate?: boolean;
 }
 
 export enum TokenType {
@@ -22,12 +16,6 @@ const initialState: AuthState = {
   isSignedIn: !!getString(TokenType.ACCESS_TOKEN),
   access_token: getString(TokenType.ACCESS_TOKEN),
   refresh_token: getString(TokenType.REFRESH_TOKEN),
-  isFirstTime: false,
-  profileId: undefined,
-  referralCode: undefined,
-  isReferral: false,
-  idp: undefined,
-  isFirstNavigate: undefined,
 };
 
 export const authSlice = createSlice({
@@ -46,44 +34,16 @@ export const authSlice = createSlice({
         setString(TokenType.REFRESH_TOKEN, refresh_token);
       }
     },
-    setFirstTime: (state, action) => {
-      state.isFirstTime = action.payload;
-    },
-    setProfileId: (state, action) => {
-      state.profileId = action.payload;
-    },
     removeToken: state => {
       state.isSignedIn = false;
       state.access_token = null;
       state.refresh_token = null;
-      state.profileId = undefined;
       removeKey(TokenType.ACCESS_TOKEN);
       removeKey(TokenType.REFRESH_TOKEN);
-    },
-    setReferralCode: (state, action) => {
-      state.referralCode = action.payload;
-    },
-    setIsReferral: (state, action) => {
-      state.isReferral = action.payload;
-    },
-    setIdp: (state, action) => {
-      state.idp = action.payload;
-    },
-    setIsFirstNavigate: (state, action) => {
-      state.isFirstNavigate = action.payload;
     },
   },
 });
 
-export const {
-  setToken,
-  removeToken,
-  setFirstTime,
-  setProfileId,
-  setReferralCode,
-  setIsReferral,
-  setIdp,
-  setIsFirstNavigate,
-} = authSlice.actions;
+export const { setToken, removeToken } = authSlice.actions;
 
 export default authSlice.reducer;

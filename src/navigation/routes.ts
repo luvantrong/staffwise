@@ -9,6 +9,9 @@ enum AuthRoutes {
 
 enum MainRoutes {
   DRAWER_TAB = 'drawer_tab',
+  STAFF = 'staff',
+  ADMIN = 'admin',
+  MANAGER = 'manager',
 }
 
 enum TabRoutes {
@@ -16,4 +19,8 @@ enum TabRoutes {
   HOME = 'Home',
 }
 
-export { RootRoutes, AuthRoutes, MainRoutes, TabRoutes };
+enum StaffRoutes {
+  LEAVE_STATUS = 'leave_status',
+}
+
+export { RootRoutes, AuthRoutes, MainRoutes, TabRoutes, StaffRoutes };

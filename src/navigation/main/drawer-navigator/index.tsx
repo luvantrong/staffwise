@@ -11,7 +11,7 @@ import CustomDrawer from './CustomDrawer';
 
 const Drawer = createDrawerNavigator<any>();
 
-const TabNavigation = () => {
+const TabNavigator = () => {
   return (
     <Drawer.Navigator
       drawerContent={props => <CustomDrawer {...props} />}
@@ -63,4 +63,4 @@ const TabNavigation = () => {
   );
 };
 
-export default TabNavigation;
+export default TabNavigator;

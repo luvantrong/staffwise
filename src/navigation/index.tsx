@@ -1,13 +1,13 @@
+import useAuthen from '@hooks/useAuthen';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { authSlice } from '@redux/reducers/auth.slice';
+import { useAppDispatch } from '@redux/selectors';
 import events, { eventKeys } from '@utils/helpers/events';
 import React, { useEffect } from 'react';
-import MainNavigator from './main/drawer-navigator';
-import { RootRoutes } from './routes';
-import { useAppDispatch } from '@redux/selectors';
-import useAuthen from '@hooks/useAuthen';
 import AuthNavigator from './auth';
+import MainNavigation from './main/main-stack';
+import { RootRoutes } from './routes';
 
 const RootStack = createNativeStackNavigator<any>();
 
@@ -45,7 +45,7 @@ const RootContent = () => {
   return (
     <RootStack.Navigator screenOptions={{ headerShown: false }}>
       <RootStack.Screen name={RootRoutes.AUTH} component={AuthNavigator} />
-      <RootStack.Screen name={RootRoutes.MAIN} component={MainNavigator} />
+      <RootStack.Screen name={RootRoutes.MAIN} component={MainNavigation} />
     </RootStack.Navigator>
   );
 };

@@ -1,9 +1,9 @@
-import { View, Text } from '@components';
-import MainLayout from '@components/layout/main-layout';
-import colors from '@utils/constants/colors';
 import { ProfileResponse, Role } from '@utils/types/profile.type';
 import React from 'react';
-import { Image, StyleSheet } from 'react-native';
+import EmptyPage from './EmptyPage';
+import AdminHome from './role-content/admin';
+import ManagerHome from './role-content/manager';
+import StaffHome from './role-content/staff';
 
 const profileDefault: ProfileResponse = {
   id: 1,
@@ -12,54 +12,19 @@ const profileDefault: ProfileResponse = {
   avatar: '',
 };
 
-const ProfileInfo = ({ profile }: { profile: ProfileResponse }) => {
-  const { name, avatar } = profile;
-  return (
-    <View style={styles.headerChildrenContainer}>
-      <Image
-        source={
-          avatar
-            ? { uri: avatar }
-            : require('@assets/images/avatar-default.png')
-        }
-        style={styles.avatar}
-      />
-      <View gap={2} center>
-        <Text color={colors.white} size={16}>
-          Welcome back,
-        </Text>
-        <Text color={colors.white} weight={'bold'} size={16}>
-          {name}
-        </Text>
-      </View>
-    </View>
-  );
-};
+export interface ContentDetailPageProps {
+  profile: ProfileResponse;
+}
+
 const Home = () => {
-  return (
-    <MainLayout
-      back={<MainLayout.OpenDrawerButton />}
-      title="Home"
-      headerChildren={<ProfileInfo profile={profileDefault} />}
-    >
-      <Text>Home</Text>
-    </MainLayout>
-  );
+  const { position } = profileDefault;
+  const ContentDetailMap: { [key: string]: any } = {
+    [Role.STAFF]: StaffHome,
+    [Role.MANAGER]: ManagerHome,
+    [Role.ADMIN]: AdminHome,
+  };
+  const ContentPage = ContentDetailMap[position as string] || EmptyPage;
+  return <ContentPage profile={profileDefault} />;
 };
 
 export default Home;
-
-const styles = StyleSheet.create({
-  headerChildrenContainer: {
-    padding: 20,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 10,
-  },
-  avatar: {
-    width: 72,
-    height: 72,
-    borderRadius: 72,
-  },
-});

@@ -25,6 +25,9 @@ const TabNavigation = () => {
         drawerItemStyle: {
           borderRadius: 8,
         },
+        drawerType: 'slide',
+        drawerPosition: 'left',
+        swipeEdgeWidth: 50,
       }}
       initialRouteName={TabRoutes.MESSAGE}
     >

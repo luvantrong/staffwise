@@ -7,6 +7,7 @@ import MenuIcon from '@assets/icons/MenuIcon';
 import HomeIcon from '@assets/icons/HomeIcon';
 import ChatIcon from '@assets/icons/ChatIcon';
 import SignOutIcon from '@assets/icons/SignOutIcon';
+import SadFace from '@assets/icons/SadFace';
 
 export {
   CloseIcon,
@@ -18,4 +19,5 @@ export {
   HomeIcon,
   ChatIcon,
   SignOutIcon,
+  SadFace,
 };

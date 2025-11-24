@@ -96,7 +96,7 @@ const MainLayout = ({
               font="Inter"
               size={18}
               color={colors.white}
-              weight={'bold'}
+              weight={600}
               align="center"
               numberOfLines={2}
             >

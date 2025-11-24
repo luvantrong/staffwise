@@ -59,8 +59,8 @@ const Login = () => {
           handleSubmit,
           errors,
           touched,
-          isValid,
-          dirty,
+          // isValid,
+          // dirty,
           // setFieldError,
           setFieldValue,
           setFieldTouched,
@@ -76,7 +76,7 @@ const Login = () => {
                   justifyContent: 'center',
                 }}
               >
-                <Text size={16} weight={'bold'}>
+                <Text size={16} weight={600}>
                   Welcome back!
                 </Text>
 

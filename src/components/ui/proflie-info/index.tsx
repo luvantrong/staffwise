@@ -21,7 +21,7 @@ const ProfileInfo = ({ profile }: { profile: ProfileResponse }) => {
         <Text color={colors.white} size={16}>
           Welcome back, {name}
         </Text>
-        <Text color={colors.white} weight={'bold'} size={16}>
+        <Text color={colors.white} weight={600} size={16}>
           {position}
         </Text>
       </View>

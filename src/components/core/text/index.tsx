@@ -40,7 +40,7 @@ interface IProps extends TextProps {
 }
 const Text = ({
   children,
-  font = 'Inter',
+  font,
   color,
   size,
   weight,

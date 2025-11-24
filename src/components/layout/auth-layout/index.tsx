@@ -65,14 +65,14 @@ const AuthLayout: React.FC<IProps> = ({
               style={styles.imgCircleLogo}
               source={require('@assets/images/logo.png')}
             />
-            <Text color={colors.primary.default} weight={'bold'} size={20}>
+            <Text color={colors.primary.default} weight={600} size={20}>
               Staffwise
             </Text>
           </View>
 
           <View padding={20}>
             {back}
-            <Text font="Inter" size={40} color={colors.white} weight={'bold'}>
+            <Text font="Inter" size={40} color={colors.white} weight={600}>
               {title}
             </Text>
           </View>

@@ -88,7 +88,7 @@ const CustomDrawer = (props: DrawerContentComponentProps) => {
               }
               style={styles.avatar}
             />
-            <Text color={colors.white} weight={'bold'} size={18}>
+            <Text color={colors.white} weight={600} size={18}>
               {name}
             </Text>
           </View>

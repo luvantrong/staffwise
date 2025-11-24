@@ -68,38 +68,48 @@ const Login = () => {
           // setFieldErrorRef.current = setFieldError;
           return (
             <View style={styles.container}>
-              <Text size={16} weight={'bold'}>
-                Welcome back!
-              </Text>
+              <View
+                column
+                flex={1}
+                gap={16}
+                style={{
+                  justifyContent: 'center',
+                }}
+              >
+                <Text size={16} weight={'bold'}>
+                  Welcome back!
+                </Text>
 
-              <TextInput
-                value={values.username}
-                onChangeText={handleChange('username')}
-                placeholder="Username/Email"
-                leftIcon={<AccountIcon />}
-                inputContainerStyle={{
-                  borderColor: colors.primary.default,
-                }}
-                placeholderColor={colors.primary.default}
-                error={touched.username && errors.username}
-              />
-              <PasswordInput
-                value={values.password}
-                onChangeText={(text: string) => {
-                  setFieldTouched('password', true);
-                  setFieldValue('password', text);
-                }}
-                inputContainerStyle={{
-                  borderColor: colors.primary.default,
-                }}
-                placeholderColor={colors.primary.default}
-                placeholder="Password"
-                leftIcon={<LockIcon />}
-                error={touched.password && errors.password}
-              />
+                <TextInput
+                  value={values.username}
+                  onChangeText={handleChange('username')}
+                  placeholder="Username/Email"
+                  leftIcon={<AccountIcon />}
+                  inputContainerStyle={{
+                    borderColor: colors.primary.default,
+                  }}
+                  placeholderColor={colors.primary.default}
+                  error={touched.username && errors.username}
+                />
+                <PasswordInput
+                  value={values.password}
+                  onChangeText={(text: string) => {
+                    setFieldTouched('password', true);
+                    setFieldValue('password', text);
+                  }}
+                  inputContainerStyle={{
+                    borderColor: colors.primary.default,
+                  }}
+                  placeholderColor={colors.primary.default}
+                  placeholder="Password"
+                  leftIcon={<LockIcon />}
+                  error={touched.password && errors.password}
+                />
+              </View>
+
               <Button
-                title="Log in"
-                disabled={!isValid || !dirty}
+                title="Login"
+                // disabled={!isValid || !dirty}
                 onPress={handleSubmit}
               />
             </View>
@@ -117,7 +127,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     gap: 16,
   },
 });

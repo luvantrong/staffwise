@@ -6,9 +6,9 @@ export const passwordRegExp =
 const validateSchema = {
   password: Yup.string()
     .trim()
-    .required('Vui lòng nhập mật khẩu')
-    .matches(passwordRegExp, 'Mật khẩu không đúng định dạng'),
-  username: Yup.string().trim().required('Vui lòng nhập tên đăng nhập'),
+    .required('Please enter password!')
+    .matches(passwordRegExp, 'Password is not in correct format!'),
+  username: Yup.string().trim().required('Please enter your username!'),
 };
 
 export default validateSchema;

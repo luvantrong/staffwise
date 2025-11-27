@@ -88,7 +88,7 @@ const Login = () => {
                   inputContainerStyle={{
                     borderColor: colors.primary.default,
                   }}
-                  placeholderColor={colors.primary.default}
+                  placeholderColor={colors.neutral.c500}
                   error={touched.username && errors.username}
                 />
                 <PasswordInput
@@ -100,7 +100,7 @@ const Login = () => {
                   inputContainerStyle={{
                     borderColor: colors.primary.default,
                   }}
-                  placeholderColor={colors.primary.default}
+                  placeholderColor={colors.neutral.c500}
                   placeholder="Password"
                   leftIcon={<LockIcon />}
                   error={touched.password && errors.password}

@@ -107,7 +107,7 @@ DraggableChatbotProps) => {
         >
           <Animated.View style={styles.icon}>
             <Image
-              source={require('@assets/images/logo.png')}
+              source={require('@assets/images/draggle-img.png')}
               style={{
                 width: 55,
                 height: 55,
@@ -129,12 +129,12 @@ const styles = StyleSheet.create({
     width: DRAGGABLE_SIZE,
     height: DRAGGABLE_SIZE,
     borderRadius: DRAGGABLE_SIZE / 2,
-    backgroundColor: colors.primary.default,
+    backgroundColor: colors.transparent,
     justifyContent: 'center',
     alignItems: 'center',
-    shadowColor: colors.black,
+    shadowColor: colors.primary.c500,
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.8,
+    shadowOpacity: 0.4,
     shadowRadius: 2,
     elevation: 5,
   },

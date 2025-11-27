@@ -1,4 +1,3 @@
-import { MenuIcon } from '@assets';
 import ArrowLeft from '@assets/icons/ArrowLeft';
 import Text from '@components/core/text';
 import View from '@components/core/view';
@@ -134,19 +133,19 @@ const BackToPreviousButton = () => {
   );
 };
 
-const OpenDrawerButton = () => {
-  const navigation = useNavigation<any>();
-  return (
-    <TouchableOpacity
-      onPress={() => {
-        navigation.openDrawer();
-      }}
-      style={{ width: 36 }}
-    >
-      <MenuIcon width={20} height={20} viewBox="0 0 512 512" />
-    </TouchableOpacity>
-  );
-};
+// const OpenDrawerButton = () => {
+//   const navigation = useNavigation<any>();
+//   return (
+//     <TouchableOpacity
+//       onPress={() => {
+//         navigation.openDrawer();
+//       }}
+//       style={{ width: 36 }}
+//     >
+//       <MenuIcon width={20} height={20} viewBox="0 0 512 512" />
+//     </TouchableOpacity>
+//   );
+// };
 
 const BackToHomeButton = () => {
   const navigation = useNavigation();
@@ -163,7 +162,7 @@ const BackToHomeButton = () => {
 
 MainLayout.BackToHomeButton = BackToHomeButton;
 MainLayout.BackToPreviousButton = BackToPreviousButton;
-MainLayout.OpenDrawerButton = OpenDrawerButton;
+// MainLayout.OpenDrawerButton = OpenDrawerButton;
 
 export default MainLayout;
 

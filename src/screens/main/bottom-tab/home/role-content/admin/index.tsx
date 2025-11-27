@@ -3,37 +3,36 @@ import MainLayout from '@components/layout/main-layout';
 import ProfileInfo from '@components/ui/proflie-info';
 import { MainRoutes } from '@navigation/routes';
 import { useNavigation } from '@react-navigation/native';
-import { ProfileResponse, Role } from '@utils/types/profile.type';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { ProfileResponse, Role } from '@utils/types/profile.type';
 
 const profileDefault: ProfileResponse = {
   id: 1,
   name: 'Mỹ Linh',
-  position: Role.STAFF,
+  position: Role.ADMIN,
   avatar: '',
 };
 
-const ManagerHome = () => {
+const AdminHome = () => {
   const navigation = useNavigation<any>();
   const onLeaveStatus = () => {
-    navigation.getParent().navigate(MainRoutes.MANAGER);
+    navigation.navigate(MainRoutes.ADMIN);
   };
   return (
     <MainLayout
-      back={<MainLayout.OpenDrawerButton />}
-      title="Home"
+      title="Staff Wise"
       headerChildren={<ProfileInfo profile={profileDefault} />}
     >
       <View style={styles.container}>
-        <Text>ManagerHome</Text>
+        <Text>AdminHome</Text>
         <Button title="Leave status" onPress={onLeaveStatus} />
       </View>
     </MainLayout>
   );
 };
 
-export default ManagerHome;
+export default AdminHome;
 
 const styles = StyleSheet.create({
   container: {

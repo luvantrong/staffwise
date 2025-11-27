@@ -35,8 +35,7 @@ const Chat = () => {
 
   return (
     <MainLayout
-      title="Staff Wise"
-      back={<Button.IconButton icon={<MainLayout.OpenDrawerButton />} />}
+      back={<MainLayout.BackToPreviousButton />}
       next={
         <Button.IconButton
           icon={<AddIcon width={25} height={25} viewBox="0 0 30 30" />}

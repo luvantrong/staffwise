@@ -12,6 +12,12 @@ import EyeOn from '@assets/icons/EyeOn';
 import EyeOff from '@assets/icons/EyeOff';
 import LockIcon from '@assets/icons/LockIcon';
 import AccountIcon from '@assets/icons/AccountIcon';
+import ChatIcon from '@assets/icons/ChatIcon';
+import UserIdIcon from '@assets/icons/UserIdIcon';
+import DocumentTextIcon from '@assets/icons/DocumentText';
+import ChevronRight from '@assets/icons/ChevronRight';
+import ArrowLogout from '@assets/icons/ArrowLogout';
+import SwapIcon from '@assets/icons/SwapIcon';
 
 export {
   CloseIcon,
@@ -28,4 +34,10 @@ export {
   EyeOff,
   LockIcon,
   AccountIcon,
+  ChatIcon,
+  UserIdIcon,
+  DocumentTextIcon,
+  ChevronRight,
+  ArrowLogout,
+  SwapIcon,
 };

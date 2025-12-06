@@ -18,6 +18,8 @@ import DocumentTextIcon from '@assets/icons/DocumentText';
 import ChevronRight from '@assets/icons/ChevronRight';
 import ArrowLogout from '@assets/icons/ArrowLogout';
 import SwapIcon from '@assets/icons/SwapIcon';
+import ArrowDown from '@assets/icons/ArrowDown';
+import SearchIcon from '@assets/icons/SearchIcon';
 
 export {
   CloseIcon,
@@ -40,4 +42,6 @@ export {
   ChevronRight,
   ArrowLogout,
   SwapIcon,
+  ArrowDown,
+  SearchIcon,
 };

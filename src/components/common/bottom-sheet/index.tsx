@@ -36,7 +36,7 @@ const BottomSheetContext = createContext<{
 
 export const useBottomSheetContext = () => useContext(BottomSheetContext);
 
-const DEFAULT_HEIGHTS = [height * 0.5, height * 0.9];
+const DEFAULT_HEIGHTS = [height * 0.6, height * 0.9];
 
 const BottomSheetProvider = ({ children }: { children: any }) => {
   const snapPoints = DEFAULT_HEIGHTS;

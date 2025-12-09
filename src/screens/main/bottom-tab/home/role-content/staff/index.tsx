@@ -1,5 +1,7 @@
 import { Button, Text, TextInput, View } from '@components';
 import { useBottomSheetContext2 } from '@components/common/bottom-sheet-outside';
+import DatePicker from '@components/common/date-picker';
+// import DatePicker from '@components/common/date-picker';
 import MultipleSelect, {
   MultipleSelectOption,
 } from '@components/common/multiple-select';
@@ -11,6 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import colors from '@utils/constants/colors';
 import { height } from '@utils/helpers/dimension';
 import { ProfileResponse, Role } from '@utils/types/profile.type';
+import dayjs from 'dayjs';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 
@@ -145,6 +148,7 @@ const StaffHome = () => {
   const [pickedDisease, setPickedDisease] = useState(
     [] as MultipleSelectOption[],
   );
+  const [time, setTime] = useState(new Date());
 
   const { openBottomSheet2, closeBottomSheet2 } = useBottomSheetContext2();
 
@@ -199,6 +203,14 @@ const StaffHome = () => {
           value={test}
           onChange={v => setTest(v)}
         />
+        <DatePicker
+          placeholder="Chọn ngày đăng ký"
+          label="Ngày đăng ký"
+          max={dayjs()}
+          value={time as any}
+          onChange={date => setTime(date as any)}
+        />
+
         <MultipleSelect
           value={pickedDisease}
           label={'Danh sách bệnh'}

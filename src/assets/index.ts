@@ -20,6 +20,7 @@ import ArrowLogout from '@assets/icons/ArrowLogout';
 import SwapIcon from '@assets/icons/SwapIcon';
 import ArrowDown from '@assets/icons/ArrowDown';
 import SearchIcon from '@assets/icons/SearchIcon';
+import Calendar from '@assets/icons/Calendar';
 
 export {
   CloseIcon,
@@ -44,4 +45,5 @@ export {
   SwapIcon,
   ArrowDown,
   SearchIcon,
+  Calendar,
 };
